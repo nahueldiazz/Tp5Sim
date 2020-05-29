@@ -48,18 +48,42 @@
             this.Cantidad_ent_vendidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Personas_afuera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidad_cine = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.hasta = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.minimoClienteSinEntrada = new System.Windows.Forms.TextBox();
+            this.hasta_input = new System.Windows.Forms.TextBox();
+            this.maxClienteSinEntrada = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.desde = new System.Windows.Forms.TextBox();
+            this.desde_input = new System.Windows.Forms.TextBox();
             this.minuto_simular = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_generar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.minimoClientConEntrada = new System.Windows.Forms.TextBox();
+            this.MaximoClienteConEntrada = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.minimoTiempoVenta = new System.Windows.Forms.TextBox();
+            this.maximoVenta = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.minimoEntradaSala = new System.Windows.Forms.TextBox();
+            this.maximoEntradaSala = new System.Windows.Forms.TextBox();
+            this.minuto_llegada_Ce = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -187,40 +211,40 @@
             this.capacidad_cine.Size = new System.Drawing.Size(100, 20);
             this.capacidad_cine.TabIndex = 1;
             // 
-            // textBox2
+            // minimoClienteSinEntrada
             // 
-            this.textBox2.Location = new System.Drawing.Point(388, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.minimoClienteSinEntrada.Location = new System.Drawing.Point(28, 31);
+            this.minimoClienteSinEntrada.Name = "minimoClienteSinEntrada";
+            this.minimoClienteSinEntrada.Size = new System.Drawing.Size(41, 20);
+            this.minimoClienteSinEntrada.TabIndex = 2;
             // 
-            // hasta
+            // hasta_input
             // 
-            this.hasta.Location = new System.Drawing.Point(149, 139);
-            this.hasta.Name = "hasta";
-            this.hasta.Size = new System.Drawing.Size(100, 20);
-            this.hasta.TabIndex = 3;
+            this.hasta_input.Location = new System.Drawing.Point(149, 139);
+            this.hasta_input.Name = "hasta_input";
+            this.hasta_input.Size = new System.Drawing.Size(100, 20);
+            this.hasta_input.TabIndex = 3;
             // 
-            // textBox4
+            // maxClienteSinEntrada
             // 
-            this.textBox4.Location = new System.Drawing.Point(305, 66);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
+            this.maxClienteSinEntrada.Location = new System.Drawing.Point(141, 31);
+            this.maxClienteSinEntrada.Name = "maxClienteSinEntrada";
+            this.maxClienteSinEntrada.Size = new System.Drawing.Size(41, 20);
+            this.maxClienteSinEntrada.TabIndex = 4;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(223, 29);
+            this.textBox5.Location = new System.Drawing.Point(1015, 65);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 5;
             // 
-            // desde
+            // desde_input
             // 
-            this.desde.Location = new System.Drawing.Point(12, 139);
-            this.desde.Name = "desde";
-            this.desde.Size = new System.Drawing.Size(100, 20);
-            this.desde.TabIndex = 6;
+            this.desde_input.Location = new System.Drawing.Point(12, 139);
+            this.desde_input.Name = "desde_input";
+            this.desde_input.Size = new System.Drawing.Size(100, 20);
+            this.desde_input.TabIndex = 6;
             // 
             // minuto_simular
             // 
@@ -279,27 +303,221 @@
             this.btn_generar.UseVisualStyleBackColor = false;
             this.btn_generar.Click += new System.EventHandler(this.btn_generar_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.minimoClienteSinEntrada);
+            this.groupBox1.Controls.Add(this.maxClienteSinEntrada);
+            this.groupBox1.Location = new System.Drawing.Point(328, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(209, 62);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tiempo llegada clientes sin entrada";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(156, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "B";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(43, 15);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(14, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "A";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.minimoClientConEntrada);
+            this.groupBox2.Controls.Add(this.MaximoClienteConEntrada);
+            this.groupBox2.Location = new System.Drawing.Point(328, 97);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(209, 62);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tiempo llegada clientes con entrada";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(156, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "B";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(43, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(14, 13);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "A";
+            // 
+            // minimoClientConEntrada
+            // 
+            this.minimoClientConEntrada.Location = new System.Drawing.Point(28, 31);
+            this.minimoClientConEntrada.Name = "minimoClientConEntrada";
+            this.minimoClientConEntrada.Size = new System.Drawing.Size(41, 20);
+            this.minimoClientConEntrada.TabIndex = 2;
+            // 
+            // MaximoClienteConEntrada
+            // 
+            this.MaximoClienteConEntrada.Location = new System.Drawing.Point(141, 31);
+            this.MaximoClienteConEntrada.Name = "MaximoClienteConEntrada";
+            this.MaximoClienteConEntrada.Size = new System.Drawing.Size(41, 20);
+            this.MaximoClienteConEntrada.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.minimoTiempoVenta);
+            this.groupBox3.Controls.Add(this.maximoVenta);
+            this.groupBox3.Location = new System.Drawing.Point(571, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(209, 62);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Tiempo de venta";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(156, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "B";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(43, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(14, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "A";
+            // 
+            // minimoTiempoVenta
+            // 
+            this.minimoTiempoVenta.Location = new System.Drawing.Point(28, 31);
+            this.minimoTiempoVenta.Name = "minimoTiempoVenta";
+            this.minimoTiempoVenta.Size = new System.Drawing.Size(41, 20);
+            this.minimoTiempoVenta.TabIndex = 2;
+            // 
+            // maximoVenta
+            // 
+            this.maximoVenta.Location = new System.Drawing.Point(141, 31);
+            this.maximoVenta.Name = "maximoVenta";
+            this.maximoVenta.Size = new System.Drawing.Size(41, 20);
+            this.maximoVenta.TabIndex = 4;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label11);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.minimoEntradaSala);
+            this.groupBox4.Controls.Add(this.maximoEntradaSala);
+            this.groupBox4.Location = new System.Drawing.Point(571, 97);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(209, 62);
+            this.groupBox4.TabIndex = 16;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Entrada a sala";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(156, 15);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(14, 13);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "B";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(43, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "A";
+            // 
+            // minimoEntradaSala
+            // 
+            this.minimoEntradaSala.Location = new System.Drawing.Point(28, 31);
+            this.minimoEntradaSala.Name = "minimoEntradaSala";
+            this.minimoEntradaSala.Size = new System.Drawing.Size(41, 20);
+            this.minimoEntradaSala.TabIndex = 2;
+            // 
+            // maximoEntradaSala
+            // 
+            this.maximoEntradaSala.Location = new System.Drawing.Point(141, 31);
+            this.maximoEntradaSala.Name = "maximoEntradaSala";
+            this.maximoEntradaSala.Size = new System.Drawing.Size(41, 20);
+            this.maximoEntradaSala.TabIndex = 4;
+            // 
+            // minuto_llegada_Ce
+            // 
+            this.minuto_llegada_Ce.Location = new System.Drawing.Point(149, 84);
+            this.minuto_llegada_Ce.Name = "minuto_llegada_Ce";
+            this.minuto_llegada_Ce.Size = new System.Drawing.Size(100, 20);
+            this.minuto_llegada_Ce.TabIndex = 17;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(105, 65);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(217, 13);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Minuto desde que llegan cliente con entrada";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1516, 450);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.minuto_llegada_Ce);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btn_generar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.minuto_simular);
-            this.Controls.Add(this.desde);
+            this.Controls.Add(this.desde_input);
             this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.hasta);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.hasta_input);
             this.Controls.Add(this.capacidad_cine);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Trabajo prático 5: Colas";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,11 +529,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Evento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Reloj;
         private System.Windows.Forms.TextBox capacidad_cine;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox hasta;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox minimoClienteSinEntrada;
+        private System.Windows.Forms.TextBox hasta_input;
+        private System.Windows.Forms.TextBox maxClienteSinEntrada;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox desde;
+        private System.Windows.Forms.TextBox desde_input;
         private System.Windows.Forms.TextBox minuto_simular;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -338,6 +556,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente_CE;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad_ent_vendidas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Personas_afuera;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox minimoClientConEntrada;
+        private System.Windows.Forms.TextBox MaximoClienteConEntrada;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox minimoTiempoVenta;
+        private System.Windows.Forms.TextBox maximoVenta;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox minimoEntradaSala;
+        private System.Windows.Forms.TextBox maximoEntradaSala;
+        private System.Windows.Forms.TextBox minuto_llegada_Ce;
+        private System.Windows.Forms.Label label13;
     }
 }
 
