@@ -41,7 +41,7 @@ namespace Tp5Sim
 
         public double calcularProbabilidadClienteSinEntrada()
         {
-            var nuevoRnd = rnd.NextDouble();
+            var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
 
             return minSinEntrada + (nuevoRnd * (maxSinEntrada - minSinEntrada)); 
 
@@ -49,7 +49,7 @@ namespace Tp5Sim
 
         public double calcularProbabilidadClienteConEntrada()
         {
-            var nuevoRnd = rnd.NextDouble();
+            var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
 
             return minConEntrada + (nuevoRnd * (maxConEentrada - minConEntrada));
 
@@ -57,7 +57,7 @@ namespace Tp5Sim
 
         public double calcularProbabilidadVentaDeEntrada()
         {
-            var nuevoRnd = rnd.NextDouble();
+            var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
 
             return minVenta + (nuevoRnd * (maxVenta - minVenta));
 
@@ -65,7 +65,7 @@ namespace Tp5Sim
 
         public double calcularProbabilidadEntradaASala()
         {
-            var nuevoRnd = rnd.NextDouble();
+            var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
 
             return minEntradaSala + (nuevoRnd * (maxEntradaSala - minEntradaSala));
 
@@ -73,8 +73,8 @@ namespace Tp5Sim
 
         public int entradaQueCompraClienteSinEntrada()
         {
-            var nuevoRnd = rnd.NextDouble();
-         
+            var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
+
             if (nuevoRnd < 0.25) return nro1;
             if (nuevoRnd < 0.50) return nro2;
             if (nuevoRnd < 0.75) return nro3;
@@ -84,12 +84,18 @@ namespace Tp5Sim
 
         public int personasQueLleganConEntradas()
         {
-            var nuevoRnd = rnd.NextDouble();
+            var nuevoRnd = this.TruncateFunction( rnd.NextDouble(),4);
 
             if (nuevoRnd < 0.33) return nro1;
             if (nuevoRnd < 0.66) return nro2;
             return nro3;
         }
+
+        public double TruncateFunction(double number, int digit)
+        {
+            return Math.Truncate((Math.Pow(10.0, (double)digit) * number)) / (Math.Pow(10.0, (double)digit));
+        }
+
 
     }
 }
