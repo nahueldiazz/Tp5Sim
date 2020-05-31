@@ -264,6 +264,10 @@ namespace Tp5Sim
             dataGridView1.Rows[r - 1].DefaultCellStyle.BackColor = Color.Yellow;
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+            dataGridView1.Rows[0].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
+            dataGridView1.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+            dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
 
             //Punto a
             this.probabiliadQueSeLLeneElCine();
