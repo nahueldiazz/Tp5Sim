@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,7 +14,7 @@ namespace Tp5Sim
 {
     public partial class Form1 : Form
     {
-        string inicio_evento = "Inic. evento"; 
+        string inicio_evento = "Inic. evento";
         string llegada_cliente_sin_entrada = "Llegada cliente sin entrada";
         string fin_de_venta_entrada = "Fin de venta";
         string llegada_cliente_con_entrada = "Llegada cliente con entrada";
@@ -36,6 +37,8 @@ namespace Tp5Sim
         double tiempoIngresoSala = 0;
         double proximoIngreso = 0;
         int colaDeLaSala = 0;
+
+        int clienteConAnticipadaPuntoC = 0;
 
         int clienteConAnticipada = 0;
         int cantidadEntradaVendidas = 0;
@@ -131,6 +134,7 @@ namespace Tp5Sim
 
         public void iniciarSimulacion()
         {
+            bool bandera = true;
             //calculo del primer reloj del primer evento desde reloj 0
             llegadaClienteSE = proxNum.calcularProbabilidadClienteSinEntrada();
             proximaLlegadaClienteSinEntrada = llegadaClienteSE + reloj;
@@ -147,7 +151,17 @@ namespace Tp5Sim
                 this.proximoEvento();
                 var valorSwitch = this.nombreEvento();
 
-                switch(valorSwitch)
+                if (capacidadCine == Convert.ToInt32(capacidad_cine.Text) && bandera == true)
+                {
+                    clienteConAnticipadaPuntoC = clienteConAnticipada;
+                    bandera = false;
+                }
+                else if (bandera == true)
+                {
+                    clienteConAnticipadaPuntoC = clienteConAnticipada;
+                }
+
+                switch (valorSwitch)
                 {
                     case 1: //cliente sin entrada 
                         evento = llegada_cliente_sin_entrada;
@@ -344,7 +358,7 @@ namespace Tp5Sim
             personas_en_cola_por_entrar.Text = personasPorEntrar.ToString();
         }
         public void descEnPorcentajeOtorgadoEntAnt() {
-            txt_desc_total_otorgado.Text = proxNum.TruncateFunction((double)clienteConAnticipada / capacidadCine*100, 2).ToString()+"%" ;
+            txt_desc_total_otorgado.Text = proxNum.TruncateFunction((double)clienteConAnticipadaPuntoC / capacidadCine*100, 2).ToString()+"%" ;
         }
         public void cantidadEntradaVendiasEnCine() {
             txt_cant_entrada_vend_en_cine.Text = cantidadEntradaVendidas.ToString();

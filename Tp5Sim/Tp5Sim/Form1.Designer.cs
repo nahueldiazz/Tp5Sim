@@ -29,6 +29,26 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iteracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.evento2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reloj2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Llegada_cliente_s_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proxima_llegada_SE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiempo_atencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fin_de_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cola_de_ventas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Llegada_cliente_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Proxima_llegada_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.llegan_n_personas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiempo_ingreso_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proximo_ingreso_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoCortador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cola_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.capacidad_del_cine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cliente_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad_ent_vendidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacidad_cine = new System.Windows.Forms.TextBox();
             this.minimoClienteSinEntrada = new System.Windows.Forms.TextBox();
             this.hasta_input = new System.Windows.Forms.TextBox();
@@ -74,26 +94,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txt_cant_entrada_vend_en_cine = new System.Windows.Forms.TextBox();
-            this.iteracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evento2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reloj2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Llegada_cliente_s_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proxima_llegada_SE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiempo_atencion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fin_de_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cola_de_ventas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Llegada_cliente_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Proxima_llegada_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.llegan_n_personas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiempo_ingreso_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.proximo_ingreso_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoCortador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cola_sala = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.capacidad_del_cine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cliente_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad_ent_vendidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -130,9 +130,150 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 182);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1121, 247);
+            this.dataGridView1.Size = new System.Drawing.Size(1404, 321);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // iteracion
+            // 
+            this.iteracion.HeaderText = "Iteracion";
+            this.iteracion.MinimumWidth = 2;
+            this.iteracion.Name = "iteracion";
+            this.iteracion.ReadOnly = true;
+            this.iteracion.Width = 2;
+            // 
+            // evento2
+            // 
+            this.evento2.HeaderText = "Evento";
+            this.evento2.Name = "evento2";
+            this.evento2.ReadOnly = true;
+            this.evento2.Width = 150;
+            // 
+            // reloj2
+            // 
+            this.reloj2.HeaderText = "Reloj (minutos)";
+            this.reloj2.Name = "reloj2";
+            this.reloj2.ReadOnly = true;
+            this.reloj2.Width = 70;
+            // 
+            // Llegada_cliente_s_entrada
+            // 
+            this.Llegada_cliente_s_entrada.HeaderText = "Llegada Cliente SE";
+            this.Llegada_cliente_s_entrada.Name = "Llegada_cliente_s_entrada";
+            this.Llegada_cliente_s_entrada.ReadOnly = true;
+            this.Llegada_cliente_s_entrada.Width = 70;
+            // 
+            // Proxima_llegada_SE
+            // 
+            this.Proxima_llegada_SE.HeaderText = "Proxima llegada SE";
+            this.Proxima_llegada_SE.Name = "Proxima_llegada_SE";
+            this.Proxima_llegada_SE.ReadOnly = true;
+            this.Proxima_llegada_SE.Width = 70;
+            // 
+            // tiempo_atencion
+            // 
+            this.tiempo_atencion.HeaderText = "Tiempo Atencion";
+            this.tiempo_atencion.Name = "tiempo_atencion";
+            this.tiempo_atencion.ReadOnly = true;
+            this.tiempo_atencion.Width = 70;
+            // 
+            // fin_de_venta
+            // 
+            this.fin_de_venta.HeaderText = "Fin de Venta";
+            this.fin_de_venta.Name = "fin_de_venta";
+            this.fin_de_venta.ReadOnly = true;
+            this.fin_de_venta.Width = 70;
+            // 
+            // cantidad_entrada
+            // 
+            this.cantidad_entrada.HeaderText = "Cantidad de entradas a comprar";
+            this.cantidad_entrada.Name = "cantidad_entrada";
+            this.cantidad_entrada.ReadOnly = true;
+            this.cantidad_entrada.Width = 70;
+            // 
+            // estadoVendedor
+            // 
+            this.estadoVendedor.HeaderText = "Estado vendedor";
+            this.estadoVendedor.Name = "estadoVendedor";
+            this.estadoVendedor.ReadOnly = true;
+            this.estadoVendedor.Width = 70;
+            // 
+            // cola_de_ventas
+            // 
+            this.cola_de_ventas.HeaderText = "Cola de ventas";
+            this.cola_de_ventas.Name = "cola_de_ventas";
+            this.cola_de_ventas.ReadOnly = true;
+            this.cola_de_ventas.Width = 70;
+            // 
+            // Llegada_cliente_CE
+            // 
+            this.Llegada_cliente_CE.HeaderText = "Llegada Cliente CE";
+            this.Llegada_cliente_CE.Name = "Llegada_cliente_CE";
+            this.Llegada_cliente_CE.ReadOnly = true;
+            this.Llegada_cliente_CE.Width = 70;
+            // 
+            // Proxima_llegada_CE
+            // 
+            this.Proxima_llegada_CE.HeaderText = "Proxima llegada CE";
+            this.Proxima_llegada_CE.Name = "Proxima_llegada_CE";
+            this.Proxima_llegada_CE.ReadOnly = true;
+            this.Proxima_llegada_CE.Width = 70;
+            // 
+            // llegan_n_personas
+            // 
+            this.llegan_n_personas.HeaderText = "Llegan n Personas CE";
+            this.llegan_n_personas.Name = "llegan_n_personas";
+            this.llegan_n_personas.ReadOnly = true;
+            this.llegan_n_personas.Width = 70;
+            // 
+            // tiempo_ingreso_sala
+            // 
+            this.tiempo_ingreso_sala.HeaderText = "Ingreso a sala";
+            this.tiempo_ingreso_sala.Name = "tiempo_ingreso_sala";
+            this.tiempo_ingreso_sala.ReadOnly = true;
+            this.tiempo_ingreso_sala.Width = 70;
+            // 
+            // proximo_ingreso_sala
+            // 
+            this.proximo_ingreso_sala.HeaderText = "Proximo ingreso sala";
+            this.proximo_ingreso_sala.Name = "proximo_ingreso_sala";
+            this.proximo_ingreso_sala.ReadOnly = true;
+            this.proximo_ingreso_sala.Width = 70;
+            // 
+            // estadoCortador
+            // 
+            this.estadoCortador.HeaderText = "Estado cortador Ent";
+            this.estadoCortador.Name = "estadoCortador";
+            this.estadoCortador.ReadOnly = true;
+            this.estadoCortador.Width = 70;
+            // 
+            // Cola_sala
+            // 
+            this.Cola_sala.HeaderText = "Cola sala";
+            this.Cola_sala.Name = "Cola_sala";
+            this.Cola_sala.ReadOnly = true;
+            this.Cola_sala.Width = 70;
+            // 
+            // capacidad_del_cine
+            // 
+            this.capacidad_del_cine.HeaderText = "Capacidad cine";
+            this.capacidad_del_cine.Name = "capacidad_del_cine";
+            this.capacidad_del_cine.ReadOnly = true;
+            this.capacidad_del_cine.Width = 70;
+            // 
+            // cliente_CE
+            // 
+            this.cliente_CE.HeaderText = "Cliente con EA";
+            this.cliente_CE.Name = "cliente_CE";
+            this.cliente_CE.ReadOnly = true;
+            this.cliente_CE.Width = 70;
+            // 
+            // Cantidad_ent_vendidas
+            // 
+            this.Cantidad_ent_vendidas.HeaderText = "Cantidad entradas vendidas";
+            this.Cantidad_ent_vendidas.Name = "Cantidad_ent_vendidas";
+            this.Cantidad_ent_vendidas.ReadOnly = true;
+            this.Cantidad_ent_vendidas.Width = 70;
             // 
             // capacidad_cine
             // 
@@ -443,7 +584,7 @@
             // txt_desc_total_otorgado
             // 
             this.txt_desc_total_otorgado.Enabled = false;
-            this.txt_desc_total_otorgado.Location = new System.Drawing.Point(342, 518);
+            this.txt_desc_total_otorgado.Location = new System.Drawing.Point(342, 591);
             this.txt_desc_total_otorgado.Name = "txt_desc_total_otorgado";
             this.txt_desc_total_otorgado.Size = new System.Drawing.Size(47, 20);
             this.txt_desc_total_otorgado.TabIndex = 27;
@@ -451,7 +592,7 @@
             // txt_personace_no_entra
             // 
             this.txt_personace_no_entra.Enabled = false;
-            this.txt_personace_no_entra.Location = new System.Drawing.Point(342, 485);
+            this.txt_personace_no_entra.Location = new System.Drawing.Point(342, 558);
             this.txt_personace_no_entra.Name = "txt_personace_no_entra";
             this.txt_personace_no_entra.Size = new System.Drawing.Size(47, 20);
             this.txt_personace_no_entra.TabIndex = 26;
@@ -460,7 +601,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 454);
+            this.label15.Location = new System.Drawing.Point(12, 527);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(186, 13);
             this.label15.TabIndex = 25;
@@ -469,7 +610,7 @@
             // txt_pr_se_llena_cine
             // 
             this.txt_pr_se_llena_cine.Enabled = false;
-            this.txt_pr_se_llena_cine.Location = new System.Drawing.Point(342, 451);
+            this.txt_pr_se_llena_cine.Location = new System.Drawing.Point(342, 524);
             this.txt_pr_se_llena_cine.Name = "txt_pr_se_llena_cine";
             this.txt_pr_se_llena_cine.Size = new System.Drawing.Size(47, 20);
             this.txt_pr_se_llena_cine.TabIndex = 24;
@@ -477,7 +618,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(424, 454);
+            this.label16.Location = new System.Drawing.Point(424, 527);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(302, 13);
             this.label16.TabIndex = 28;
@@ -487,7 +628,7 @@
             // txt_cola_vta_max
             // 
             this.txt_cola_vta_max.Enabled = false;
-            this.txt_cola_vta_max.Location = new System.Drawing.Point(801, 451);
+            this.txt_cola_vta_max.Location = new System.Drawing.Point(801, 524);
             this.txt_cola_vta_max.Name = "txt_cola_vta_max";
             this.txt_cola_vta_max.Size = new System.Drawing.Size(47, 20);
             this.txt_cola_vta_max.TabIndex = 29;
@@ -496,7 +637,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(424, 485);
+            this.label17.Location = new System.Drawing.Point(424, 558);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(343, 13);
             this.label17.TabIndex = 30;
@@ -505,7 +646,7 @@
             // personas_en_cola_por_entrar
             // 
             this.personas_en_cola_por_entrar.Enabled = false;
-            this.personas_en_cola_por_entrar.Location = new System.Drawing.Point(801, 485);
+            this.personas_en_cola_por_entrar.Location = new System.Drawing.Point(801, 558);
             this.personas_en_cola_por_entrar.Name = "personas_en_cola_por_entrar";
             this.personas_en_cola_por_entrar.Size = new System.Drawing.Size(47, 20);
             this.personas_en_cola_por_entrar.TabIndex = 31;
@@ -513,7 +654,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 488);
+            this.label18.Location = new System.Drawing.Point(12, 561);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(313, 13);
             this.label18.TabIndex = 32;
@@ -522,7 +663,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 521);
+            this.label19.Location = new System.Drawing.Point(12, 594);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(220, 13);
             this.label19.TabIndex = 33;
@@ -531,7 +672,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(424, 521);
+            this.label20.Location = new System.Drawing.Point(424, 594);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(201, 13);
             this.label20.TabIndex = 34;
@@ -540,157 +681,16 @@
             // txt_cant_entrada_vend_en_cine
             // 
             this.txt_cant_entrada_vend_en_cine.Enabled = false;
-            this.txt_cant_entrada_vend_en_cine.Location = new System.Drawing.Point(801, 520);
+            this.txt_cant_entrada_vend_en_cine.Location = new System.Drawing.Point(801, 593);
             this.txt_cant_entrada_vend_en_cine.Name = "txt_cant_entrada_vend_en_cine";
             this.txt_cant_entrada_vend_en_cine.Size = new System.Drawing.Size(47, 20);
             this.txt_cant_entrada_vend_en_cine.TabIndex = 35;
-            // 
-            // iteracion
-            // 
-            this.iteracion.HeaderText = "Iteracion";
-            this.iteracion.MinimumWidth = 2;
-            this.iteracion.Name = "iteracion";
-            this.iteracion.ReadOnly = true;
-            this.iteracion.Width = 2;
-            // 
-            // evento2
-            // 
-            this.evento2.HeaderText = "Evento";
-            this.evento2.Name = "evento2";
-            this.evento2.ReadOnly = true;
-            this.evento2.Width = 150;
-            // 
-            // reloj2
-            // 
-            this.reloj2.HeaderText = "Reloj (minutos)";
-            this.reloj2.Name = "reloj2";
-            this.reloj2.ReadOnly = true;
-            this.reloj2.Width = 70;
-            // 
-            // Llegada_cliente_s_entrada
-            // 
-            this.Llegada_cliente_s_entrada.HeaderText = "Llegada Cliente SE";
-            this.Llegada_cliente_s_entrada.Name = "Llegada_cliente_s_entrada";
-            this.Llegada_cliente_s_entrada.ReadOnly = true;
-            this.Llegada_cliente_s_entrada.Width = 70;
-            // 
-            // Proxima_llegada_SE
-            // 
-            this.Proxima_llegada_SE.HeaderText = "Proxima llegada SE";
-            this.Proxima_llegada_SE.Name = "Proxima_llegada_SE";
-            this.Proxima_llegada_SE.ReadOnly = true;
-            this.Proxima_llegada_SE.Width = 70;
-            // 
-            // tiempo_atencion
-            // 
-            this.tiempo_atencion.HeaderText = "Tiempo Atencion";
-            this.tiempo_atencion.Name = "tiempo_atencion";
-            this.tiempo_atencion.ReadOnly = true;
-            this.tiempo_atencion.Width = 70;
-            // 
-            // fin_de_venta
-            // 
-            this.fin_de_venta.HeaderText = "Fin de Venta";
-            this.fin_de_venta.Name = "fin_de_venta";
-            this.fin_de_venta.ReadOnly = true;
-            this.fin_de_venta.Width = 70;
-            // 
-            // cantidad_entrada
-            // 
-            this.cantidad_entrada.HeaderText = "Cantidad de entradas a comprar";
-            this.cantidad_entrada.Name = "cantidad_entrada";
-            this.cantidad_entrada.ReadOnly = true;
-            this.cantidad_entrada.Width = 70;
-            // 
-            // estadoVendedor
-            // 
-            this.estadoVendedor.HeaderText = "Estado vendedor";
-            this.estadoVendedor.Name = "estadoVendedor";
-            this.estadoVendedor.ReadOnly = true;
-            this.estadoVendedor.Width = 70;
-            // 
-            // cola_de_ventas
-            // 
-            this.cola_de_ventas.HeaderText = "Cola de ventas";
-            this.cola_de_ventas.Name = "cola_de_ventas";
-            this.cola_de_ventas.ReadOnly = true;
-            this.cola_de_ventas.Width = 70;
-            // 
-            // Llegada_cliente_CE
-            // 
-            this.Llegada_cliente_CE.HeaderText = "Llegada Cliente CE";
-            this.Llegada_cliente_CE.Name = "Llegada_cliente_CE";
-            this.Llegada_cliente_CE.ReadOnly = true;
-            this.Llegada_cliente_CE.Width = 70;
-            // 
-            // Proxima_llegada_CE
-            // 
-            this.Proxima_llegada_CE.HeaderText = "Proxima llegada CE";
-            this.Proxima_llegada_CE.Name = "Proxima_llegada_CE";
-            this.Proxima_llegada_CE.ReadOnly = true;
-            this.Proxima_llegada_CE.Width = 70;
-            // 
-            // llegan_n_personas
-            // 
-            this.llegan_n_personas.HeaderText = "Llegan n Personas CE";
-            this.llegan_n_personas.Name = "llegan_n_personas";
-            this.llegan_n_personas.ReadOnly = true;
-            this.llegan_n_personas.Width = 70;
-            // 
-            // tiempo_ingreso_sala
-            // 
-            this.tiempo_ingreso_sala.HeaderText = "Ingreso a sala";
-            this.tiempo_ingreso_sala.Name = "tiempo_ingreso_sala";
-            this.tiempo_ingreso_sala.ReadOnly = true;
-            this.tiempo_ingreso_sala.Width = 70;
-            // 
-            // proximo_ingreso_sala
-            // 
-            this.proximo_ingreso_sala.HeaderText = "Proximo ingreso sala";
-            this.proximo_ingreso_sala.Name = "proximo_ingreso_sala";
-            this.proximo_ingreso_sala.ReadOnly = true;
-            this.proximo_ingreso_sala.Width = 70;
-            // 
-            // estadoCortador
-            // 
-            this.estadoCortador.HeaderText = "Estado cortador Ent";
-            this.estadoCortador.Name = "estadoCortador";
-            this.estadoCortador.ReadOnly = true;
-            this.estadoCortador.Width = 70;
-            // 
-            // Cola_sala
-            // 
-            this.Cola_sala.HeaderText = "Cola sala";
-            this.Cola_sala.Name = "Cola_sala";
-            this.Cola_sala.ReadOnly = true;
-            this.Cola_sala.Width = 70;
-            // 
-            // capacidad_del_cine
-            // 
-            this.capacidad_del_cine.HeaderText = "Capacidad cine";
-            this.capacidad_del_cine.Name = "capacidad_del_cine";
-            this.capacidad_del_cine.ReadOnly = true;
-            this.capacidad_del_cine.Width = 70;
-            // 
-            // cliente_CE
-            // 
-            this.cliente_CE.HeaderText = "Cliente con EA";
-            this.cliente_CE.Name = "cliente_CE";
-            this.cliente_CE.ReadOnly = true;
-            this.cliente_CE.Width = 70;
-            // 
-            // Cantidad_ent_vendidas
-            // 
-            this.Cantidad_ent_vendidas.HeaderText = "Cantidad entradas vendidas";
-            this.Cantidad_ent_vendidas.Name = "Cantidad_ent_vendidas";
-            this.Cantidad_ent_vendidas.ReadOnly = true;
-            this.Cantidad_ent_vendidas.Width = 70;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 618);
+            this.ClientSize = new System.Drawing.Size(1433, 618);
             this.Controls.Add(this.txt_cant_entrada_vend_en_cine);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
