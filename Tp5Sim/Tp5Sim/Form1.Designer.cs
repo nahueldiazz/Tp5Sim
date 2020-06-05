@@ -462,9 +462,9 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(12, 454);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(180, 13);
+            this.label15.Size = new System.Drawing.Size(186, 13);
             this.label15.TabIndex = 25;
-            this.label15.Text = "a) Probabilidd de que el cine se llene";
+            this.label15.Text = "a) Probabilidad de que el cine se llene";
             // 
             // txt_pr_se_llena_cine
             // 
@@ -513,7 +513,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(9, 488);
+            this.label18.Location = new System.Drawing.Point(12, 488);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(313, 13);
             this.label18.TabIndex = 32;
@@ -531,7 +531,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(427, 520);
+            this.label20.Location = new System.Drawing.Point(424, 521);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(201, 13);
             this.label20.TabIndex = 34;
@@ -632,7 +632,7 @@
             // 
             // llegan_n_personas
             // 
-            this.llegan_n_personas.HeaderText = "Llegan n Personas";
+            this.llegan_n_personas.HeaderText = "Llegan n Personas CE";
             this.llegan_n_personas.Name = "llegan_n_personas";
             this.llegan_n_personas.ReadOnly = true;
             this.llegan_n_personas.Width = 70;
