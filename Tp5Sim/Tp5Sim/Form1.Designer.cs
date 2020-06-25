@@ -74,6 +74,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txt_cant_entrada_vend_en_cine = new System.Windows.Forms.TextBox();
+            this.tpurga = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.iteracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evento2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reloj2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -84,6 +86,8 @@
             this.cantidad_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cola_de_ventas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inestabilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fin_purga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Llegada_cliente_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Proxima_llegada_CE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.llegan_n_personas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,6 +103,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -117,6 +122,8 @@
             this.cantidad_entrada,
             this.estadoVendedor,
             this.cola_de_ventas,
+            this.inestabilidad,
+            this.fin_purga,
             this.Llegada_cliente_CE,
             this.Proxima_llegada_CE,
             this.llegan_n_personas,
@@ -127,7 +134,7 @@
             this.capacidad_del_cine,
             this.cliente_CE,
             this.Cantidad_ent_vendidas});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 182);
+            this.dataGridView1.Location = new System.Drawing.Point(-31, 182);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1121, 247);
@@ -225,7 +232,7 @@
             this.btn_generar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_generar.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_generar.Location = new System.Drawing.Point(808, 123);
+            this.btn_generar.Location = new System.Drawing.Point(992, 75);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Size = new System.Drawing.Size(110, 34);
             this.btn_generar.TabIndex = 12;
@@ -545,6 +552,23 @@
             this.txt_cant_entrada_vend_en_cine.Size = new System.Drawing.Size(47, 20);
             this.txt_cant_entrada_vend_en_cine.TabIndex = 35;
             // 
+            // tpurga
+            // 
+            this.tpurga.Location = new System.Drawing.Point(16, 20);
+            this.tpurga.Name = "tpurga";
+            this.tpurga.Size = new System.Drawing.Size(52, 20);
+            this.tpurga.TabIndex = 36;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.tpurga);
+            this.groupBox5.Location = new System.Drawing.Point(819, 61);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(103, 64);
+            this.groupBox5.TabIndex = 38;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Tiempo de purga";
+            // 
             // iteracion
             // 
             this.iteracion.HeaderText = "Iteracion";
@@ -615,6 +639,18 @@
             this.cola_de_ventas.Name = "cola_de_ventas";
             this.cola_de_ventas.ReadOnly = true;
             this.cola_de_ventas.Width = 70;
+            // 
+            // inestabilidad
+            // 
+            this.inestabilidad.HeaderText = "Inestabilidad del Sistema";
+            this.inestabilidad.Name = "inestabilidad";
+            this.inestabilidad.ReadOnly = true;
+            // 
+            // fin_purga
+            // 
+            this.fin_purga.HeaderText = "Fin purga";
+            this.fin_purga.Name = "fin_purga";
+            this.fin_purga.ReadOnly = true;
             // 
             // Llegada_cliente_CE
             // 
@@ -691,6 +727,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1133, 618);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.txt_cant_entrada_vend_en_cine);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
@@ -732,6 +769,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -795,6 +834,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoVendedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn cola_de_ventas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inestabilidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fin_purga;
         private System.Windows.Forms.DataGridViewTextBoxColumn Llegada_cliente_CE;
         private System.Windows.Forms.DataGridViewTextBoxColumn Proxima_llegada_CE;
         private System.Windows.Forms.DataGridViewTextBoxColumn llegan_n_personas;
@@ -805,6 +846,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn capacidad_del_cine;
         private System.Windows.Forms.DataGridViewTextBoxColumn cliente_CE;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad_ent_vendidas;
+        private System.Windows.Forms.TextBox tpurga;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 
