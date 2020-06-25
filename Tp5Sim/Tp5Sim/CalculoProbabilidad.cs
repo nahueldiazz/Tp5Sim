@@ -16,6 +16,7 @@ namespace Tp5Sim
         double minConEntrada = 0;
         double maxEntradaSala = 0;
         double minEntradaSala = 0;
+        
 
         Random rnd = new Random();
 
@@ -24,6 +25,10 @@ namespace Tp5Sim
         int nro2 = 2;
         int nro3 = 3;
         int nro4 = 4;
+
+        double inestable1 = 15.4 ;
+        double inestable2 = 17.7;
+        double inestable3 = 20.1;
 
 
         public CalculoProbabilidad (double maxSE, double minSE, double maxVenta, double minVenta, double maxCE, double minCE, double maxEntradaSala, double minEntradaSala)
@@ -36,6 +41,7 @@ namespace Tp5Sim
             this.minConEntrada = minCE;
             this.maxEntradaSala = maxEntradaSala;
             this.minEntradaSala = minEntradaSala;
+            
                
         }
 
@@ -90,6 +96,18 @@ namespace Tp5Sim
             if (nuevoRnd < 0.66) return nro2;
             return nro3;
         }
+
+        public double tiempoInestabilidad()
+        {
+            var nuevoRnd = this.TruncateFunction(rnd.NextDouble(), 4);
+            if(nuevoRnd < 0.2) return inestable1;
+            if (nuevoRnd < 0.5) return inestable2;
+
+            return inestable3;
+
+        }
+
+
 
         public double TruncateFunction(double number, int digit)
         {

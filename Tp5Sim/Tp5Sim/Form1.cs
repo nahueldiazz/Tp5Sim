@@ -19,6 +19,8 @@ namespace Tp5Sim
         string fin_de_venta_entrada = "Fin de venta";
         string llegada_cliente_con_entrada = "Llegada cliente con entrada";
         string ingreso_a_sala = "Ingreso a sala";
+        string inicio_purga = "Inicio de purga";
+        string evento_fin_purga = "Fin de purga";
 
         CalculoProbabilidad proxNum;
 
@@ -51,7 +53,9 @@ namespace Tp5Sim
         int i = 0;
         int paramCapacidadCine;
 
-
+        
+        double finPurga = 0;
+        double inicioPurga = 0;
 
         //inicializacion de datos 
         double minutosASimular = 0;
@@ -120,9 +124,9 @@ namespace Tp5Sim
             estCortadorEnt = "Libre";
             i = 0;
 
-
-
-
+            
+            finPurga = 0;
+            inicioPurga = 0;
             //inicializacion de datos 
              minutosASimular = 0;
              desde = 0;
@@ -143,7 +147,12 @@ namespace Tp5Sim
             LlegadaclientCE = proxNum.calcularProbabilidadClienteConEntrada();
             proximaLlegadaClienteCE = LlegadaclientCE + minutoLlegadaClienteConEntrada;
 
-            dataGridView1.Rows.Add(i, inicio_evento, reloj, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar, estVendedorEnt, colaDeVentas, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt, colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
+            //calculo del tiempo en donde se vuelve inestable y fin de purga
+            inicioPurga = proxNum.tiempoInestabilidad();
+            finPurga = inicioPurga + double.Parse(tpurga.Text);
+
+
+            dataGridView1.Rows.Add(i, inicio_evento, reloj, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar, estVendedorEnt, colaDeVentas, inicioPurga, finPurga, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt, colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
 
             while (reloj <= minutosASimular)
             {
@@ -262,16 +271,26 @@ namespace Tp5Sim
                         CantidadEntradasAComprar = 0;
                         tiempoAtencion = 0;
                         break;
-                                
+                    case 5://Inicio de purga
+                        evento = inicio_purga;
+                        finDeVenta = reloj + ( finDeVenta - reloj) + double.Parse(tpurga.Text);
+                        inicioPurga = proxNum.tiempoInestabilidad() + reloj;
+                        estVendedorEnt = "Purgando..";
+                        break;
+                    case 6: //fin de purga
+                        evento = evento_fin_purga;
+                      //  inicioPurga = proxNum.tiempoInestabilidad() + reloj;
+                        finPurga = inicioPurga + double.Parse(tpurga.Text);
+                        break;
                 }
 
                 if (reloj >= desde && reloj <= hastas)
                 {
-                    dataGridView1.Rows.Add(i,evento, reloj, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar,estVendedorEnt, colaDeVentas, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt,colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
+                    dataGridView1.Rows.Add(i,evento, reloj, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar,estVendedorEnt, colaDeVentas, inicioPurga, finPurga, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt,colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
                 }
             }
 
-            dataGridView1.Rows.Add(i, evento, minutosASimular, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar, estVendedorEnt, colaDeVentas, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt, colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
+            dataGridView1.Rows.Add(i, evento, minutosASimular, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar, estVendedorEnt, colaDeVentas, inicioPurga, finPurga, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt, colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
             
             int r = dataGridView1.Rows.Count;
             dataGridView1.Rows[r - 1].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
@@ -309,6 +328,8 @@ namespace Tp5Sim
                 num.Add(proximaLlegadaClienteCE);
                 num.Add(proximaLlegadaClienteSinEntrada);
                 num.Add(proximoIngreso);
+                num.Add(inicioPurga);
+                num.Add(finPurga);
                 reloj = num.Min();
                 return;
             }
@@ -318,6 +339,8 @@ namespace Tp5Sim
                 num.Add(proximaLlegadaClienteSinEntrada);
                 num.Add(proximoIngreso);
                 num.Add(finDeVenta);
+                num.Add(inicioPurga);
+                num.Add(finPurga);
                 reloj = num.Min();
                 return;
 
@@ -330,6 +353,8 @@ namespace Tp5Sim
             if (reloj == proximaLlegadaClienteSinEntrada) return 1;
             if (reloj == proximaLlegadaClienteCE) return 2;
             if (finDeVenta != 0 && reloj == finDeVenta) return 3;
+            if (reloj == inicioPurga) return 5;
+            if (reloj == finPurga) return 6;
 
             return 4;
         }
