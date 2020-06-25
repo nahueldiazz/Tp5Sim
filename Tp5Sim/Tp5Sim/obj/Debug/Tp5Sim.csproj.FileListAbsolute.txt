@@ -37,3 +37,13 @@ C:\Users\Usuario\Desktop\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.Properties.Resour
 C:\Users\Usuario\Desktop\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.csproj.GenerateResource.cache
 C:\Users\Usuario\Desktop\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.exe
 C:\Users\Usuario\Desktop\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.pdb
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\bin\Debug\Tp5Sim.exe.config
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\bin\Debug\Tp5Sim.exe
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\bin\Debug\Tp5Sim.pdb
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.csprojAssemblyReference.cache
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.Form1.resources
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.Properties.Resources.resources
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.csproj.GenerateResource.cache
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.csproj.CoreCompileInputs.cache
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.exe
+C:\Users\HP\Documents\Tp5Sim\Tp5Sim\Tp5Sim\obj\Debug\Tp5Sim.pdb
