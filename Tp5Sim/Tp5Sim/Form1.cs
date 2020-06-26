@@ -53,7 +53,7 @@ namespace Tp5Sim
         int i = 0;
         int paramCapacidadCine;
 
-        
+
         double finPurga = 0;
         double inicioPurga = 0;
 
@@ -81,7 +81,7 @@ namespace Tp5Sim
             cantSimulaciones++;
             dataGridView1.Rows.Clear();
             this.inicializarVariables();
-          //  i = 0;
+            //  i = 0;
 
             proxNum = new CalculoProbabilidad(double.Parse(maxClienteSinEntrada.Text), double.Parse(minimoClienteSinEntrada.Text), double.Parse(maximoVenta.Text),
                 double.Parse(minimoTiempoVenta.Text), double.Parse(MaximoClienteConEntrada.Text), double.Parse(minimoClientConEntrada.Text), double.Parse(maximoEntradaSala.Text), double.Parse(minimoEntradaSala.Text));
@@ -101,37 +101,37 @@ namespace Tp5Sim
         {
 
             //datos grilla 
-           
-             reloj = 0;
-             llegadaClienteSE = 0;
-             proximaLlegadaClienteSinEntrada = 0;
-             tiempoAtencion = 0;
-             finDeVenta = 0;
-             CantidadEntradasAComprar = 0;
-             colaDeVentas = 0;
-             LlegadaclientCE = 0;
-             proximaLlegadaClienteCE = 0;
-             cantidadQueLleganCE = 0;
-             tiempoIngresoSala = 0;
-             proximoIngreso = 0;
-             colaDeLaSala = 0;
 
-             clienteConAnticipada = 0;
-             cantidadEntradaVendidas = 0;
-             capacidadCine = 0;
+            reloj = 0;
+            llegadaClienteSE = 0;
+            proximaLlegadaClienteSinEntrada = 0;
+            tiempoAtencion = 0;
+            finDeVenta = 0;
+            CantidadEntradasAComprar = 0;
+            colaDeVentas = 0;
+            LlegadaclientCE = 0;
+            proximaLlegadaClienteCE = 0;
+            cantidadQueLleganCE = 0;
+            tiempoIngresoSala = 0;
+            proximoIngreso = 0;
+            colaDeLaSala = 0;
+
+            clienteConAnticipada = 0;
+            cantidadEntradaVendidas = 0;
+            capacidadCine = 0;
 
             estVendedorEnt = "Libre";
             estCortadorEnt = "Libre";
             i = 0;
 
-            
+
             finPurga = 0;
             inicioPurga = 0;
             //inicializacion de datos 
-             minutosASimular = 0;
-             desde = 0;
-             hastas = 0;
-             minutoLlegadaClienteConEntrada = 0;
+            minutosASimular = 0;
+            desde = 0;
+            hastas = 0;
+            minutoLlegadaClienteConEntrada = 0;
 
 
         }
@@ -174,10 +174,10 @@ namespace Tp5Sim
                 {
                     case 1: //cliente sin entrada 
                         evento = llegada_cliente_sin_entrada;
-                            llegadaClienteSE = proxNum.calcularProbabilidadClienteSinEntrada();
-                            proximaLlegadaClienteSinEntrada = llegadaClienteSE + reloj;
+                        llegadaClienteSE = proxNum.calcularProbabilidadClienteSinEntrada();
+                        proximaLlegadaClienteSinEntrada = llegadaClienteSE + reloj;
 
-                        estVendedorEnt = "Ocupado";
+
 
                         if (finDeVenta != 0 && finDeVenta > proximaLlegadaClienteSinEntrada)
                         {
@@ -186,12 +186,13 @@ namespace Tp5Sim
                         }
                         else if (finDeVenta == 0)
                         {
-                            
+                            estVendedorEnt = "Ocupado";
                             tiempoAtencion = proxNum.calcularProbabilidadVentaDeEntrada();
                             finDeVenta = tiempoAtencion + reloj;
                             colaDeVentas = colaDeVentas != 0 ? colaDeVentas - 1 : colaDeVentas;
                         }
-                        else {
+                        else
+                        {
                             colaDeVentas++;
                             tiempoAtencion = 0;
 
@@ -200,7 +201,7 @@ namespace Tp5Sim
                         cantidadQueLleganCE = 0;
                         CantidadEntradasAComprar = 0;
                         tiempoIngresoSala = 0;
-             
+
 
                         break;
                     case 2: //cliente con entrada
@@ -222,14 +223,14 @@ namespace Tp5Sim
                         CantidadEntradasAComprar = 0;
                         tiempoAtencion = 0;
                         break;
-                        
+
 
                     case 3: //fin de ventas
                         evento = fin_de_venta_entrada;
                         CantidadEntradasAComprar = proxNum.entradaQueCompraClienteSinEntrada();
                         colaDeLaSala += CantidadEntradasAComprar;
                         cantidadEntradaVendidas += CantidadEntradasAComprar;
-                      
+
                         colaDeVentas = colaDeVentas != 0 ? colaDeVentas - 1 : colaDeVentas;
                         estVendedorEnt = colaDeVentas == 0 ? "Libre" : "Ocupado";
 
@@ -243,11 +244,12 @@ namespace Tp5Sim
                             tiempoAtencion = 0;
                             finDeVenta = 0;
                         }
-                        if (double.Parse(minutos_ingrso_cine.Text) <= reloj) {
+                        if (double.Parse(minutos_ingrso_cine.Text) <= reloj)
+                        {
                             estCortadorEnt = colaDeLaSala == 0 || colaDeLaSala == paramCapacidadCine ? "Libre" : "Ocupado";
                         }
-                        
-                       
+
+
                         tiempoIngresoSala = 0;
                         LlegadaclientCE = 0;
                         llegadaClienteSE = 0;
@@ -273,25 +275,26 @@ namespace Tp5Sim
                         break;
                     case 5://Inicio de purga
                         evento = inicio_purga;
-                        finDeVenta = reloj + ( finDeVenta - reloj) + double.Parse(tpurga.Text);
+                        finDeVenta = reloj + (finDeVenta - reloj) + double.Parse(tpurga.Text);
                         inicioPurga = proxNum.tiempoInestabilidad() + reloj;
                         estVendedorEnt = "Purgando..";
                         break;
                     case 6: //fin de purga
                         evento = evento_fin_purga;
-                      //  inicioPurga = proxNum.tiempoInestabilidad() + reloj;
+                        //  inicioPurga = proxNum.tiempoInestabilidad() + reloj;
+                        estVendedorEnt = finDeVenta > finPurga ? "Ocupado" : "Libre";
                         finPurga = inicioPurga + double.Parse(tpurga.Text);
                         break;
                 }
 
                 if (reloj >= desde && reloj <= hastas)
                 {
-                    dataGridView1.Rows.Add(i,evento, reloj, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar,estVendedorEnt, colaDeVentas, inicioPurga, finPurga, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt,colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
+                    dataGridView1.Rows.Add(i, evento, reloj, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar, estVendedorEnt, colaDeVentas, inicioPurga, finPurga, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt, colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
                 }
             }
 
             dataGridView1.Rows.Add(i, evento, minutosASimular, llegadaClienteSE, proximaLlegadaClienteSinEntrada, tiempoAtencion, finDeVenta, CantidadEntradasAComprar, estVendedorEnt, colaDeVentas, inicioPurga, finPurga, LlegadaclientCE, proximaLlegadaClienteCE, cantidadQueLleganCE, tiempoIngresoSala, proximoIngreso, estCortadorEnt, colaDeLaSala, capacidadCine, clienteConAnticipada, cantidadEntradaVendidas);
-            
+
             int r = dataGridView1.Rows.Count;
             dataGridView1.Rows[r - 1].DefaultCellStyle.ForeColor = Color.FromArgb(156, 0, 6);
             dataGridView1.Rows[r - 1].DefaultCellStyle.BackColor = Color.Yellow;
@@ -317,12 +320,12 @@ namespace Tp5Sim
 
         }
 
-        
+
         public void proximoEvento()
         {
             List<double> num = new List<double>();
 
-            
+
             if (finDeVenta == 0)
             {
                 num.Add(proximaLlegadaClienteCE);
@@ -375,17 +378,20 @@ namespace Tp5Sim
 
         }
 
-        public void porcentajePersonaConEntradaNoPuedaEntrar() {
-            txt_personace_no_entra.Text= proxNum.TruncateFunction(((double)colaDeLaSala / (double)capacidadCine)*100,2).ToString()+"%";
+        public void porcentajePersonaConEntradaNoPuedaEntrar()
+        {
+            txt_personace_no_entra.Text = proxNum.TruncateFunction(((double)colaDeLaSala / (double)capacidadCine) * 100, 2).ToString() + "%";
         }
         public void personasEnColaPorEntrar(int personasPorEntrar)
         {
             personas_en_cola_por_entrar.Text = personasPorEntrar.ToString();
         }
-        public void descEnPorcentajeOtorgadoEntAnt() {
-            txt_desc_total_otorgado.Text = proxNum.TruncateFunction((double)clienteConAnticipadaPuntoC / capacidadCine*100, 2).ToString()+"%" ;
+        public void descEnPorcentajeOtorgadoEntAnt()
+        {
+            txt_desc_total_otorgado.Text = proxNum.TruncateFunction((double)clienteConAnticipadaPuntoC / capacidadCine * 100, 2).ToString() + "%";
         }
-        public void cantidadEntradaVendiasEnCine() {
+        public void cantidadEntradaVendiasEnCine()
+        {
             txt_cant_entrada_vend_en_cine.Text = cantidadEntradaVendidas.ToString();
         }
         private void minuto_llegada_Ce_TextChanged(object sender, EventArgs e)
